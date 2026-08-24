@@ -1,0 +1,62 @@
+# Environment files - NEVER commit real secrets
+.env
+.env.local
+.env.*.local
+.env.development
+.env.production
+.env.test
+
+# Node.js
+node_modules/
+dist/
+build/
+*.log
+
+# Next.js
+.next/
+out/
+*.next/
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Database
+*.sqlite
+*.sqlite3
+*.db
+
+# Uploads
+uploads/
+public/uploads/
+
+# Logs
+logs/
+*.log
+
+# Compiled files
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Test coverage
+coverage/
+.nyc_output/
+
+# Misc
+*.pem
+*.key
+*.crt
+*.p12
