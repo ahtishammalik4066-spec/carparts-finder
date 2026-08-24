@@ -4,6 +4,7 @@ import HowItWorks from "../components/home/HowItWorks";
 import FeaturedListings from "../components/home/FeaturedListings";
 import PopularBrands from "../components/home/PopularBrands";
 import PopularParts from "../components/home/PopularParts";
+import CTA from "../components/home/CTA";
 
 export default function HomePage() {
   return (
@@ -14,6 +15,7 @@ export default function HomePage() {
       <FeaturedListings />
       <PopularBrands />
       <PopularParts />
+      <CTA />
     </main>
   );
 }

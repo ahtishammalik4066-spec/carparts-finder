@@ -1,17 +1,44 @@
 import Link from "next/link";
+import styles from "./Navbar.module.css";
 
 export default function Navbar() {
   return (
-    <nav className="navbar">
-      <div className="navbar-brand">
-        <Link href="/">PartFinder PK</Link>
-      </div>
-      <div className="navbar-links">
-        <Link href="/listings">Listings</Link>
-        <Link href="/brands">Brands</Link>
-        <Link href="/shops">Shops</Link>
-        <Link href="/blog">Blog</Link>
-        <Link href="/contact">Contact</Link>
+    <nav className={styles.navbar}>
+      <div className={`container ${styles.inner}`}>
+        <Link href="/" className={styles.brand}>
+          <span className={styles.logo}>P</span>
+
+          <span className={styles.brandText}>
+            PartFinder <span>PK</span>
+          </span>
+        </Link>
+
+        <div className={styles.links}>
+          <Link href="/">Home</Link>
+          <Link href="/listings">Find Parts</Link>
+          <Link href="/brands">Brands</Link>
+          <Link href="/shops">Shops</Link>
+          <Link href="/blog">Blog</Link>
+          <Link href="/about">About</Link>
+        </div>
+
+        <div className={styles.actions}>
+          <Link href="/login" className={styles.login}>
+            Login
+          </Link>
+
+          <Link href="/register" className={styles.register}>
+            Register
+          </Link>
+        </div>
+
+        <button
+          type="button"
+          className={styles.menuButton}
+          aria-label="Open navigation menu"
+        >
+          ☰
+        </button>
       </div>
     </nav>
   );
