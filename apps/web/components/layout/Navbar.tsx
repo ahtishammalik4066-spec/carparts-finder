@@ -9,7 +9,7 @@ export default function Navbar() {
           <span className={styles.logo}>P</span>
 
           <span className={styles.brandText}>
-            PartFinder <span>PK</span>
+            PartFinder <span></span>
           </span>
         </Link>
 

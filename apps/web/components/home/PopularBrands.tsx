@@ -1,35 +1,32 @@
+import Image from "next/image";
 import Link from "next/link";
 import styles from "./PopularBrands.module.css";
 
 const brands = [
-  { name: "Toyota", logo: "T" },
-  { name: "Honda", logo: "H" },
-  { name: "Suzuki", logo: "S" },
-  { name: "Nissan", logo: "N" },
-  { name: "KIA", logo: "K" },
-  { name: "Hyundai", logo: "H" },
-  { name: "Mitsubishi", logo: "M" },
-  { name: "BMW", logo: "B" },
-  { name: "Mercedes", logo: "M" },
-  { name: "Daihatsu", logo: "D" },
-  { name: "Mazda", logo: "M" },
-  { name: "Audi", logo: "A" },
+  { name: "Suzuki", logo: "/brands/suzuki.png" },
+  { name: "Toyota", logo: "/brands/toyota.png" },
+  { name: "Honda", logo: "/brands/honda.png" },
+  { name: "Daihatsu", logo: "/brands/daihatsu.png" },
+  { name: "Nissan", logo: "/brands/nissan.png" },
+  { name: "Mitsubishi", logo: "/brands/mitsubishi.png" },
+  { name: "Hyundai", logo: "/brands/hyundai.png" },
+  { name: "Kia", logo: "/brands/kia.png" },
+  { name: "Mercedes", logo: "/brands/mercedes.png" },
+  { name: "Faw", logo: "/brands/faw.png" },
+  { name: "Mazda", logo: "/brands/mazda.png" },
+  { name: "Chevrolet", logo: "/brands/chevrolet.png" },
+  { name: "Daewoo", logo: "/brands/daewoo.png" },
+  { name: "Audi", logo: "/brands/audi.png" },
+  { name: "Prince", logo: "/brands/prince.png" },
+  { name: "BMW", logo: "/brands/bmw.png" },
+  { name: "Subaru", logo: "/brands/subaru.png" },
+  { name: "United", logo: "/brands/united.png" },
 ];
 
 export default function PopularBrands() {
   return (
     <section className={styles.section}>
       <div className="container">
-        <div className={styles.header}>
-          <span className={styles.label}>Car Brands</span>
-
-          <h2 className={styles.title}>Popular Brands</h2>
-
-          <p className={styles.description}>
-            Browse genuine and used parts for popular car brands in Pakistan.
-          </p>
-        </div>
-
         <div className={styles.grid}>
           {brands.map((brand) => (
             <Link
@@ -37,11 +34,25 @@ export default function PopularBrands() {
               className={styles.brand}
               key={brand.name}
             >
-              <span className={styles.logo}>{brand.logo}</span>
+              <div className={styles.logoWrap}>
+                <Image
+                  src={brand.logo}
+                  alt={brand.name}
+                  width={100}
+                  height={100}
+                  className={styles.logoImg}
+                />
+              </div>
 
               <span className={styles.name}>{brand.name}</span>
             </Link>
           ))}
+        </div>
+
+        <div className={styles.viewAllWrap}>
+          <Link href="/brands" className={styles.viewAll}>
+            View All
+          </Link>
         </div>
       </div>
     </section>

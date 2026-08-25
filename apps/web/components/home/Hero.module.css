@@ -1,0 +1,371 @@
+/* =========================================
+   HERO LAYOUT
+========================================= */
+
+.heroLayout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 410px;
+  align-items: center;
+  gap: 70px;
+  width: 100%;
+}
+
+
+/* =========================================
+   MAIN HEADING ANIMATION — word by word
+========================================= */
+
+.heroTitle {
+  overflow: hidden;
+}
+
+.word {
+  display: inline-block;
+
+  color: #ffffff;
+
+  opacity: 0;
+  transform: translateY(30px);
+
+  animation: wordReveal 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.accentWord {
+  color: #e11d2e;
+}
+
+@keyframes wordReveal {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================
+   SEARCH BOX
+========================================= */
+
+.searchBox {
+  width: 100%;
+  padding: 28px 24px 24px;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+
+  box-shadow:
+    0 20px 45px rgba(15, 23, 42, 0.14);
+
+  position: relative;
+  z-index: 10;
+}
+
+
+/* =========================================
+   SEARCH HEADER
+========================================= */
+
+.searchHeader {
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.freeText {
+  display: inline-block;
+
+  margin-bottom: 7px;
+
+  color: #e11d2e;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.searchHeader h2 {
+  margin: 0;
+
+  color: #0b1220;
+
+  font-size: 23px;
+  line-height: 1.25;
+  font-weight: 800;
+}
+
+.searchHeader p {
+  margin: 7px 0 0;
+
+  color: #64748b;
+
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+
+/* =========================================
+   FORM
+========================================= */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+
+/* =========================================
+   FIELD
+========================================= */
+
+.field {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* =========================================
+   LABEL
+========================================= */
+
+.label {
+  margin-bottom: 7px;
+
+  color: #475569;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+
+/* =========================================
+   SELECT
+========================================= */
+
+.select {
+  width: 100%;
+  height: 49px;
+
+  padding: 0 42px 0 14px;
+
+  background-color: #ffffff;
+
+  color: #172033;
+
+  border: 1px solid #d8dee8;
+  border-radius: 9px;
+
+  outline: none;
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+
+  appearance: none;
+
+  background-image:
+    linear-gradient(
+      45deg,
+      transparent 50%,
+      #64748b 50%
+    ),
+    linear-gradient(
+      135deg,
+      #64748b 50%,
+      transparent 50%
+    );
+
+  background-position:
+    calc(100% - 18px) 21px,
+    calc(100% - 13px) 21px;
+
+  background-size:
+    5px 5px,
+    5px 5px;
+
+  background-repeat: no-repeat;
+}
+
+.select:hover {
+  border-color: #cbd5e1;
+  background-color: #fafafa;
+}
+
+.select:focus {
+  border-color: #e11d2e;
+
+  box-shadow:
+    0 0 0 3px rgba(225, 29, 46, 0.10);
+}
+
+
+/* =========================================
+   SEARCH BUTTON
+========================================= */
+
+.searchButton {
+  width: 100%;
+  height: 49px;
+
+  margin-top: 3px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  border: none;
+  border-radius: 9px;
+
+  background: #e11d2e;
+  color: #ffffff;
+
+  font-family: inherit;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 18px rgba(225, 29, 46, 0.20);
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.searchButton span {
+  font-size: 17px;
+
+  transition:
+    transform 0.2s ease;
+}
+
+.searchButton:hover {
+  background: #c91b2a;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 12px 24px rgba(225, 29, 46, 0.25);
+}
+
+.searchButton:hover span {
+  transform: translateX(3px);
+}
+
+.searchButton:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+  .heroLayout {
+    grid-template-columns:
+      minmax(0, 1fr)
+      370px;
+
+    gap: 40px;
+  }
+
+  .searchBox {
+    padding: 24px 20px 20px;
+  }
+}
+
+
+/* =========================================
+   TABLET / SMALL LAPTOP
+========================================= */
+
+@media (max-width: 900px) {
+  .heroLayout {
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+  }
+
+  .searchBox {
+    width: 100%;
+    max-width: 520px;
+
+    margin: 0 auto;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+  .heroLayout {
+    gap: 32px;
+  }
+
+  .searchBox {
+    padding: 22px 16px 18px;
+
+    border-radius: 14px;
+  }
+
+  .searchHeader h2 {
+    font-size: 20px;
+  }
+
+  .searchHeader p {
+    font-size: 12px;
+  }
+
+  .select {
+    height: 47px;
+    font-size: 13px;
+  }
+
+  .searchButton {
+    height: 47px;
+  }
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .word {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .searchButton,
+  .searchButton span,
+  .select {
+    transition: none;
+  }
+}
